@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*here we specified the font-size of the root which is html to be 10 px 
+because we want all the elements to be in rem unit 
+rem unit mean that for example if we set a {font-size :2rem; --> 2x10=20px}*/
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: "Roboto","Arial",sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: space-between; /*make a space between the child elements of the header which are 3 divs */
+    align-items: center; /* it make the child elements in the center of the parent's height*/
+    height: 56px;/*we got this values by inspecting the original youtube website*/
+    padding: 0 16px; /*هنا الابقونات كانت لازقه في طرف الصفحة ف احنا عملنا بادينج ليها*/
+}
+.left-section {
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* so that when we hover over the left section the look of the mouse become pointer*/   
+}
+.left-section img {
+    width: 46%;
+    padding-left: 16px;
+}
+.mid-section {
+    display: flex;
+    align-items: center;
+    margin-left:-9% ; /*here we set */
+}
+.mid-section form {
+    display: flex;
+    height: 40px;
+    width: 628px;
+}
+.mid-section input {
+    width: 100%;
+    border-radius: 2px 0 0 2px;
+    padding: 12px;
+    font-size: 1.6rem ; /*1.6 x 10 = 16*/
+    border: 1px solid #d3d3d3;
+    border-right: none;
+}
+.mid-section button {
+    width: 64px;
+    border: 1px solid #d3d3d3;
+    border-radius: 0 2px 2px 0;
+    padding-top:4px ;
+    background-color: #f8f8f8;
+    cursor: pointer;
+}
+.mid-section button:hover{
+    border-color:#c6c6c6 ;
+    background-color: #f0f0f0;
+}
+
+.mid-section .mic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;  /*hrizontally*/
+    align-items: center;  /*vertically*/
+    margin-left: 10px;
+    cursor: pointer;
+}
+.right-section a {
+    padding-right: 18px;
+    text-decoration: none;
+    color: black;
+}
+.content-area {
+    height: calc(100vh-56px); /*this mean that 100viewhieght is height of the whole page 
+    and the 56px is the height of the header and here we did that so that the height of content area = the height of the whole page - the height of the header */
+    display: flex;
+    background-color: #f9f9f9;
+}
+aside {
+    height: 100%; /*it will take the whole height(or the same height) from the parent which is the content-area */
+    width: 280px;
+    background-color: white;
+    overflow-y: auto;/* it will create scroll bar so that if the elements is over on the main heigth then it will create a scroll bar*/
+
+}
+nav {
+    width: 100%; /*i.e. its width = 280px the same width of its parent which is aside  */
+    display: flex;
+    flex-direction: column; /*by default(if we didn't writ it ) the flex direction is row so we change it to become column*/
+    margin: 15px 0 ;/*make a distance between the first element in the menu and the youtube logo */
+    padding-right:15px ;/*to make a distance between any hovered element and the videoes part*/
+
+}
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #030303;
+}
+
+.nav-link:hover {
+    background-color: rgba(0 , 0 , 0 , 0.05);
+}
+.nav-link span {
+    margin-left: 24px;
+    font-size: 1.4rem;
+    line-height: 2em;
+    font-weight: 400;
+    color: #030303;
+}
+.active {
+    background-color: #e5e5e5;
+
+}
+#active-span{
+    font-weight: 500; /* make the word more bold*/ 
+}
+hr{
+    height: 1px;
+    background-color: #e5e5e5;
+    border: none;
+    margin: 10px 0;
+}
+nav p {
+    font-size: 1.4rem;
+    color:#606060;
+    font-weight: 500;
+    padding: 8px 16px;
+    text-transform: uppercase;
+}
+.channel-img {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+}
+
+main {
+    width: 100%;/*it will take the width of the parent element which is content-area  - the height of aside element*/
+    height: 100%;
+    padding: 35px 15px;
+    border-top: 1px solid #ddd;
+    overflow-y: auto;
+
+
+}
+
+.videos-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+.video {
+    width: 330px;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+.thumbnail {
+    width: 100%;/*=330px*/
+    height: 187px;
+    margin-bottom: 12px;
+}
+.thumbnail img {
+    height: 100%;/*=187px*/
+    width: 100%;/*=330px*/
+}
+.video-details {
+    display: flex; /*العناصر تكون جمب بعض*/
+}
+.creator-img img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+.title {
+    display: flex;
+    flex-direction: column;
+
+}
+.title a {
+    text-decoration: none;
+}
+.video-title {
+    color: rgb(3 ,3 , 3);
+    font-size: 1.6rem;
+    max-width: 278px; 
+    font-weight: 500;
+    line-height: 2.2rem;
+    margin-bottom: 4px;
+    overflow: hidden;/*عشان لو الكتابه بتاعت وصف الفديو طويله يشيل منها ويهمل مكان اللي شاله نقط*/
+    /*we want to show dots when the title of the video is too long so that we will use line clamp property 
+    and to use it we will use display -webkit-box to display this property on google chrome */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    /*this mean that if the line is more than 2 lines then crop it*/
+    -webkit-box-orient: vertical;
+
+}
+.video-creator , .title span {
+    color: rgb ( 96 , 96 , 96);
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-weight: 400;
+
+}
+.video-creator:hover{
+    color: #030303;
+}
